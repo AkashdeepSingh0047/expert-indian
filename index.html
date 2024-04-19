@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <h2 class="navbar-brand mb-0">Drippy Hotel Chain</h2>
+            <!-- Validator link -->
+            <a href="https://validator.w3.org/" target="_blank" class="navbar-text me-3 white-link">Validator</a>
+            <!-- Repository link -->
+            <a href="https://github.com/AkashdeepSingh0047/effective-Hotel" target="_blank" class="navbar-text white-link">Repository</a>
+        </div>
+    </nav>        
+
+    <div class="container container-shadow">
+        <h1>Get Me A Room</h1>
+        <form id="bookingForm">
+            <!-- First Name -->
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+            </div>
+            <!-- Last Name -->
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
+            </div>
+            <!-- Driver's License Number -->
+            <div class="mb-3">
+                <label for="licenseNumber" class="form-label">Driver's Licence Number</label>
+                <input type="text" class="form-control" id="licenseNumber" placeholder="XXXXXXXX" maxlength="8" required>
+            </div>
+            <!-- Social Security Number -->
+            <div class="mb-3">
+                <label for="ssn" class="form-label">Social Security Number</label>
+                <input type="password" class="form-control" id="ssn" placeholder="XXXXXXXXX" pattern="[0-9]{9}" maxlength="9" required>
+            </div>
+            <!-- Phone Number -->
+            <div class="mb-3">
+                <label for="phoneNumber" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phoneNumber" placeholder="XXXXXXXXXX" pattern="[0-9]{10}"  maxlength="10"required>
+            </div>
+            <!-- Email -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <!-- Street Address -->
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <textarea class="form-control" id="address" rows="3" placeholder="Enter your address" required></textarea>
+            </div>
+            <!-- City -->
+            <div class="mb-3">
+                <label for="city" class="form-label">City</label>
+                <textarea class="form-control" id="city" rows="3" placeholder="Enter your city" required></textarea>
+            </div>
+            <!-- State Selection Dropdown -->
+            <div class="mb-3">
+                <label for="state" class="form-label">State</label>
+                <select class="form-select" id="state" required>
+                    <option value="" selected disabled>Select state</option>
+                    <!-- Populate with all states of USA -->
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+            </div>
+            <!-- Check-In Date -->
+            <div class="mb-3">
+                <label for="checkInDate" class="form-label">Check-In Date</label>
+                <input type="date" class="form-control" id="checkInDate" min="<?php echo date('Y-m-d'); ?>" placeholder="Select check-in date" required>
+            </div>
+            <!-- Check-Out Date -->
+            <div class="mb-3">
+                <label for="checkOutDate" class="form-label">Check-Out Date</label>
+                <input type="date" class="form-control" id="checkOutDate" min="<?php echo date('Y-m-d'); ?>" placeholder="Select check-out date" required>
+            </div>
+            <!-- Room Preference - Smoking or Non-Smoking -->
+            <div class="mb-3">
+                <label class="form-label">Room Preference</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="roomPreference" id="smokingRoom" value="smoking">
+                    <label class="form-check-label" for="smokingRoom">Smoking Room</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="roomPreference" id="nonSmokingRoom" value="non-smoking">
+                    <label class="form-check-label" for="nonSmokingRoom">Non-Smoking Room</label>
+                </div>
+            </div>            
+            <!-- Terms and Conditions -->
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="agreeCheckbox" required>
+                <label class="form-check-label" for="agreeCheckbox">I agree that the information I provide is my own.</label>
+            </div>
+            <!-- Submit and Clear Buttons -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-secondary">Clear</button>
+        </form>
+    </div>
+    <script src="script/script.js"></script>
+</body>
+</html>
